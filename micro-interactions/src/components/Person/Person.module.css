@@ -1,0 +1,23 @@
+/* style.css */
+
+.Person {
+  position: relative;
+  background-color: var(--bg-color-white);
+  overflow: hidden;
+  height: auto;
+  color: var(--color-base);
+
+  & button {
+    background-color: transparent;
+    font-family: var(--font-family);
+    border: 0;
+    color: var(--color-base);
+  }
+
+  &.show {
+    height: auto;
+  }
+  &.hide {
+    height: 0;
+  }
+}

@@ -1,0 +1,17 @@
+/* style.css */
+
+.Search {
+  position: relative;
+
+  & button {
+    background-color: transparent;
+    border: 0;
+  }
+
+  & input {
+    background-color: var(--bg-color-white);
+    padding: 0.5rem;
+    border: 0;
+    color: var(--color-base);
+  }
+}

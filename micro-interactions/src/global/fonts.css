@@ -1,0 +1,13 @@
+/* dist/styles/fonts.css efter build */
+@font-face {
+  font-family: "Inter";
+
+  font-style: normal;
+  font-weight: 400 900;
+  font-style: normal;
+  font-display: swap;
+  src: url("../assets/fonts/Inter/Inter-VariableFont_wght.woff2")
+    format("woff2");
+  src: local("Inter"), local("Inter-VariableFont_wght"),
+    url(../assets/fonts/Inter/Inter-VariableFont_wght.woff2) format("woff2");
+}

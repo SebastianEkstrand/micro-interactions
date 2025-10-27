@@ -1,0 +1,127 @@
+:root {
+  --font-family: 'Inter', sans-serif;
+
+  /********** Font Sizes **********/
+  --font-xs: var(--size-s);
+  --font-s: 0.65rem;
+  --font-n: 0.75rem;
+  --font-m: 0.95rem;
+  --font-l: 1.15rem;
+  --font-xl: 1.33rem;
+  --font-2xl: 1.6rem;
+
+  /********** Margin Sizes **********/
+  --size-xs: 0.25rem;
+  --size-s: 0.5rem;
+  --size-n: 1rem;
+  --size-m: 1.5rem;
+  --size-l: 2rem;
+  --size-xl: 3rem;
+  --size-2xl: 4rem;
+  --size-3xl: 6rem;
+
+  /********** Base Border Radius  **********/
+  --border-radius-base: var(--size-xs);
+
+  /********** Base HEX Colors  **********/
+  --background-color: #fff;
+  --color-base: #222;
+  --border-color-base: #bbb;
+  --webdoc-orange: #f7922d;
+  --webdoc-darkblue: #364b63;
+  --success-color: #529f2c;
+  --warning-color: #ffd059;
+  --danger-color: #b82e2e;
+  --notification-color: #d94747;
+  --color-white: #fff;
+  --color-white-80: rgba(255, 255, 255, 0.8);
+  --color-black: #000;
+  --webdoc-link: #364b63;
+  --color-teal-saturated: #106e70;
+  --color-shadow-raw: 0, 0, 0;
+
+  /*** Form Colors ***/
+  --hover-bg-color: #e8f2f7;
+  --focus-border-color: #7a9db8;
+  --hover-outline-transparent: rgba(221, 240, 251, 0.7);
+
+  /********** HSL LUMINOSITY OFFSET SETTINGS  **********/
+  --hsl-border: 10;
+  --hsl-border-hover: 20;
+  --hsl-border-active: 30;
+  --hsl-hover: 8;
+  --hsl-active: 16;
+
+  /********** Shadow Settings **********/
+  --shadow-none: 0 0 0 0 rgba(var(--color-shadow-raw), 0);
+  --shadow-s: 0 0.125rem var(--size-xs) 0 rgba(var(--color-shadow-raw), 0.1);
+  --shadow-m: 0 var(--size-xs) var(--size-s) 0
+    rgba(var(--color-shadow-raw), 0.1);
+  --shadow-l: 0 var(--size-xs) var(--size-n) 0
+    rgba(var(--color-shadow-raw), 0.1);
+  --shadow-xl: 0 var(--size-xs) var(--size-l) 0
+    rgba(var(--color-shadow-raw), 0.1);
+
+  /********** Default Surface Colors  **********/
+  --bg-color-white: var(--background-color);
+  --bg-color-off-white: hsl(from var(--background-color) h s calc(l - 5));
+  --bg-color-darker: hsl(from var(--background-color) h s calc(l - 10));
+  --bg-color-darkest: hsl(from var(--background-color) h s calc(l - 15));
+
+  /********** Default Text Colors  **********/
+  --color: var(--color-base);
+  --color-soft: hsl(from var(--color-base) h s calc(l + 20));
+  --color-softer: hsl(from var(--color-base) h s calc(l + 45));
+  --color-inverted: hsl(from var(--color-base) h s calc(100 - l));
+  --color-inverted-soft: hsl(from var(--color-base) h s calc(100 - (l + 20)));
+  --color-inverted-softer: hsl(from var(--color-base) h s calc(100 - (l + 40)));
+
+  /********** Default Border Colors  **********/
+  --border-color: var(--border-color-base);
+  --border-color-lighter: hsl(from var(--border-color-base) h s calc(l + 6));
+  --border-color-darker: hsl(from var(--border-color-base) h s calc(l - 5));
+  --border-color-darkest: hsl(from var(--border-color-base) h s calc(l - 15));
+  --border-color-focus: hsl(from var(--border-color-base) h s 0%);
+
+  /********** Border radius  **********/
+  --border-radius: var(--border-radius-base);
+  --border-radius-s: calc(var(--border-radius-base) / 2);
+  --border-radius-m: calc(var(--border-radius-base) * 2);
+  --border-radius-l: calc(var(--border-radius-base) * 4);
+
+  /********** Accent Colors  **********/
+  --primary-bg: hsl(from var(--webdoc-darkblue) h s l);
+  --primary-text: var(--color-white);
+
+  /********** Semantic Colors (Success, Varning, Error)  **********/
+  --success-bg: hsl(from var(--success-color) h s l);
+  --success-text: var(--color-white);
+  --danger-bg: hsl(from var(--danger-color) h s l);
+  --danger-text: var(--color-white);
+
+  /********** Tint Backgrounds  **********/
+  --tint-color: hsl(from var(--webdoc-darkblue) h s l / 33%);
+
+  /*** LEFT MENU variables ****/
+  --left-menu-bg: #292f36;
+  --left-menu-bg-hover: #21262b;
+  --left-menu-category-title: #94b8d1;
+  --left-menu-color: #c4cdd4;
+  --left-menu-bg-active: #f6923f1a;
+  --left-menu-color-active: #ffce8d;
+  --left-menu-border-active: #fcba6333;
+  --left-menu-user-field-bg: #1b1f24;
+
+  /*** Message Theme Colors ****/
+
+  --error-bg-color: #ffe5e5;
+  --error-border-color: #ebadad;
+  --error-border-color-hover: #b2453f;
+  --error-text-color: #573819;
+  --error-text-color-soft: #8f5656;
+
+  /*** THEMED COLORS ***/
+  --theme-teal-bg-color: hsl(from var(--color-teal-saturated) h 25% 95%);
+  --theme-teal-border-color: hsl(from var(--color-teal-saturated) h 40% 70%);
+  --theme-teal-text-color: hsl(from var(--color-teal-saturated) h 50% 30%);
+}

@@ -1,0 +1,34 @@
+.icon {
+  display: inline-block;
+
+  & svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+    color: inherit;
+
+    & path {
+      color: inherit;
+    }
+  }
+}
+.icon-size-small {
+  width: 0.8rem;
+  height: 0.8rem;
+}
+.icon-size-medium {
+  width: var(--size-n);
+  height: var(--size-n);
+}
+.icon-size-large {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+.icon-size-xlarge {
+  width: var(--size-m);
+  height: var(--size-m);
+}
+.icon-size-auto {
+  width: 100%;
+  height: 100%;
+}
