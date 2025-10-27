@@ -11,6 +11,8 @@ function App() {
   const { getSearchResult, selected, setSearchValue, setSelected, searchFor } =
     useAppMainHook();
 
+  console.log("selected", selected);
+
   return (
     <section
       className={`${styles.searchMode} ${
@@ -24,8 +26,9 @@ function App() {
       <ul className={styles.frontenders}>
         {getSearchResult().map((person: IPerson) => (
           <Person
+            key={person.name}
             data={person}
-            onClick={(data: IPerson) => setSelected(data)}
+            onClick={(data: IPerson | null) => setSelected(data)}
             state={
               selected?.name === person.name
                 ? "show"

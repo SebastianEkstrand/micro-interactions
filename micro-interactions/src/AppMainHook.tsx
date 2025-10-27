@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { FRONTENDERS, type IPerson } from "./data/frontenders";
 
 export const useAppMainHook = () => {
@@ -26,6 +26,12 @@ export const useAppMainHook = () => {
     setSearchFor(val);
     setSelected(null);
   };
+
+  useEffect(() => {
+    if (selected === null) {
+      setSearchFor("");
+    }
+  }, [selected]);
 
   return { getSearchResult, selected, setSearchValue, setSelected, searchFor };
 };
