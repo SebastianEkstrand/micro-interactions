@@ -1,11 +1,43 @@
 /* style.css */
 
 .Search {
+  box-sizing: border-box;
   position: relative;
+  display: flex;
+  overflow: hidden;
+  background-color: var(--bg-color-white);
+  height: 3rem;
+  padding: 0rem;
+  border-radius: 1.5rem;
+  width: 3rem;
+  transition: border-radius 0.5s ease-in-out, width 0.5s ease-in-out,
+    outline 0.1s ease-in-out;
+  box-shadow: var(--shadow-m);
+  cursor: pointer;
+  z-index: 10;
 
   & button {
     background-color: transparent;
     border: 0;
+    width: 3rem;
+    min-width: 3rem;
+    padding: 0.5rem;
+    display: flex;
+    justify-content: center;
+    color: var(--color-base);
+    border-radius: 1.5rem;
+
+    &:hover {
+      background-color: var(--color-black);
+      color: var(--color-white);
+    }
+
+    & svg {
+      width: 2rem;
+      width: 2rem;
+      margin-left: 0.01rem;
+      margin-top: -0.02rem;
+    }
   }
 
   & input {
@@ -13,5 +45,39 @@
     padding: 0.5rem;
     border: 0;
     color: var(--color-base);
+    opacity: 0;
+    font-size: var(--font-m);
+    transition: opacity 0.5s ease-in-out 0.3s;
+    outline: none;
+    display: flex;
+    flex: 1;
+  }
+
+  &.showInput {
+    width: 20rem;
+    border: 3px solid white;
+    padding: 0.5rem;
+    border-radius: var(--border-radius);
+
+    & button {
+      padding: 0rem;
+      pointer-events: none;
+      width: 2rem;
+      min-width: 2rem;
+    }
+
+    & input {
+      opacity: 1;
+    }
+
+    &:has(+ ul li) {
+      border-radius: var(--border-radius) var(--border-radius) 0 0;
+    }
+  }
+
+  &:focus-within {
+    border-color: black;
+    transition: outline 0.1s ease-in-out;
+    outline: 3px solid white;
   }
 }

@@ -1,0 +1,50 @@
+/* Endast lite bas för läsbarhet (inte del av övningen) */
+:root {
+  --gap: 1rem;
+  --muted: #99a3ad;
+  --accent: #5da9e9;
+}
+
+main.css-training {
+  background-color: var(--bg-color-white);
+  color: var(--color-base);
+}
+
+.container {
+  margin-inline: auto;
+  padding: 1rem;
+}
+.card {
+  border-radius: var(--border-radius-m);
+  padding: var(--gap);
+  box-shadow: 0 2px 24px rgba(0, 0, 0, 0.25);
+}
+code,
+kbd,
+pre {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+.grid {
+  display: grid;
+  gap: var(--gap);
+}
+.grid-2 {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+ul.nav-list {
+  list-style: none;
+  padding: 0;
+
+  & li a {
+    background-color: rgba(255, 255, 255, 0.3);
+    text-decoration: none;
+    color: var(--color-base);
+    padding: 0.5rem 1rem;
+    border-radius: var(--border-radius);
+
+    &:hover {
+      background-color: white;
+    }
+  }
+}

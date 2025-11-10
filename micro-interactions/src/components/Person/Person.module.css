@@ -2,22 +2,163 @@
 
 .Person {
   position: relative;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
   background-color: var(--bg-color-white);
-  overflow: hidden;
   height: auto;
+  padding: 1rem 0.5rem 1rem 4rem;
   color: var(--color-base);
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    background-color: var(--bg-color-off-white);
+  }
+
+  & img {
+    display: block;
+    position: absolute;
+    max-width: 2rem;
+    height: 2rem;
+    border-radius: 1rem;
+    overflow: hidden;
+    object-fit: cover;
+    transition: all 0.6s ease-in-out;
+    inset: 1rem 1rem 1rem 1rem;
+  }
 
   & button {
     background-color: transparent;
     font-family: var(--font-family);
     border: 0;
-    color: var(--color-base);
+    color: var(--color-softer);
+    outline: 0;
+    position: absolute;
+  }
+
+  & button.previewButton {
+    opacity: 1;
+    right: 1rem;
+    width: 1rem;
+    height: 1rem;
+    cursor: pointer;
+  }
+
+  & button.backButton {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  &:focus-within {
+    transition: outline 0.1s ease-in-out;
+    outline: 5px solid var(--color-base);
+    z-index: 11;
+  }
+
+  &.default img {
+    transition: all 0.3s ease-in-out;
   }
 
   &.show {
     height: auto;
+    /*flex-direction: column;*/
+    flex-wrap: wrap;
+    width: 20rem;
+    padding: 6rem 1rem 4rem;
+    border-radius: var(--border-radius-m);
+    cursor: default;
+
+    &:hover {
+      background-color: var(--bg-color-white);
+    }
+
+    & button.previewButton {
+      opacity: 0;
+    }
+
+    button.backButton {
+      display: flex;
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    & img {
+      max-width: 10rem;
+      height: 10rem;
+      border-radius: 5rem;
+      inset: -5rem 5rem auto 5rem;
+    }
+
+    & .text {
+      text-align: center;
+      margin: 0 auto;
+
+      & h4 {
+        font-size: var(--font-l);
+        line-height: var(--font-xl);
+        margin-bottom: 0.125rem;
+      }
+
+      & p {
+        font-size: var(--font-n);
+        line-height: var(--font-n);
+      }
+    }
+
+    &:focus-within {
+      outline: none;
+    }
   }
   &.hide {
+    transition: all 0.1s ease-in-out;
     height: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+
+  & h4,
+  p {
+    margin: 0;
+    font-size: var(--font-m);
+    line-height: var(--font-l);
+  }
+
+  & p {
+    font-size: var(--font-s);
+    line-height: var(--font-s);
+    color: var(--color-softer);
+  }
+}
+
+button.backButton {
+  display: flex;
+  justify-content: center;
+  border: 1px solid var(--border-color);
+  padding: 0.5rem 0;
+  height: 2rem;
+  inset: auto 1rem 1rem 1rem;
+  border-radius: 0.25rem;
+  font-weight: 600;
+  line-height: 0.9rem;
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    border-color: var(--border-color-darkest);
+    cursor: pointer;
+  }
+  &:active {
+    border-color: var(--border-color-focus);
+    cursor: pointer;
+  }
+  &:focus-visible {
+    outline: 3px solid var(--color-base);
   }
 }

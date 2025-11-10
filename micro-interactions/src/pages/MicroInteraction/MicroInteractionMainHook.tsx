@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import { FRONTENDERS, type IPerson } from "./data/frontenders";
+import { FRONTENDERS, type IPerson } from "../../data/frontenders";
 
-export const useAppMainHook = () => {
+export const useMicroInteractionMainHook = () => {
   const [searchFor, setSearchFor] = useState("");
   const [selected, setSelected] = useState<IPerson | null>(null);
 
@@ -29,7 +29,7 @@ export const useAppMainHook = () => {
 
   useEffect(() => {
     if (selected === null) {
-      setSearchFor("");
+      //setSearchFor("");
     }
   }, [selected]);
 

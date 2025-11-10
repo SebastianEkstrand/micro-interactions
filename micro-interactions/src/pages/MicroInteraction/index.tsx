@@ -1,15 +1,12 @@
-import "./global/variables.css";
-import "./global/default.css";
-import "./global/fonts.css";
-import Search from "./components/Search";
-import { type IPerson } from "./data/frontenders";
-import Person from "./components/Person";
 import styles from "./App.module.css";
-import { useAppMainHook } from "./AppMainHook";
+import { useMicroInteractionMainHook } from "./MicroInteractionMainHook";
+import type { IPerson } from "../../data/frontenders";
+import Person from "../../components/Person";
+import Search from "../../components/Search";
 
-function App() {
+function MicroInteraction() {
   const { getSearchResult, selected, setSearchValue, setSelected, searchFor } =
-    useAppMainHook();
+    useMicroInteractionMainHook();
 
   console.log("selected", selected);
 
@@ -43,4 +40,4 @@ function App() {
   );
 }
 
-export default App;
+export default MicroInteraction;
