@@ -22,6 +22,7 @@ import "./your.css";
 const Css = () => (
   <>
     <header className="container card" id="top">
+      <a href="/micro">Micro interactions</a>
       <h1 data-level="intro">CSS Selectors – träningsyta</h1>
       <nav aria-label="Primär" className="site-nav">
         <ul className="nav-list">

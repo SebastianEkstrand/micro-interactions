@@ -11,32 +11,35 @@ function MicroInteraction() {
   console.log("selected", selected);
 
   return (
-    <section
-      className={`${styles.searchMode} ${
-        selected ? styles.personSelected : ""
-      }`}
-    >
-      <Search
-        searchValue={searchFor}
-        onChangeCallback={(val: string) => setSearchValue(val)}
-      />
-      <ul className={styles.frontenders}>
-        {getSearchResult().map((person: IPerson) => (
-          <Person
-            key={person.name}
-            data={person}
-            onClick={(data: IPerson | null) => setSelected(data)}
-            state={
-              selected?.name === person.name
-                ? "show"
-                : selected === null
-                ? "default"
-                : "hide"
-            }
-          />
-        ))}
-      </ul>
-    </section>
+    <>
+      <a href="/">CSS basics</a>
+      <section
+        className={`${styles.searchMode} ${
+          selected ? styles.personSelected : ""
+        }`}
+      >
+        <Search
+          searchValue={searchFor}
+          onChangeCallback={(val: string) => setSearchValue(val)}
+        />
+        <ul className={styles.frontenders}>
+          {getSearchResult().map((person: IPerson) => (
+            <Person
+              key={person.name}
+              data={person}
+              onClick={(data: IPerson | null) => setSelected(data)}
+              state={
+                selected?.name === person.name
+                  ? "show"
+                  : selected === null
+                  ? "default"
+                  : "hide"
+              }
+            />
+          ))}
+        </ul>
+      </section>
+    </>
   );
 }
 
